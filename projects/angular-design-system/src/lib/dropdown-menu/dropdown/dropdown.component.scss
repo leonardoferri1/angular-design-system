@@ -1,0 +1,151 @@
+@import "../../styles/variables";
+
+$dropdown-height: 300px;
+$highlight-scrollbar-color: #4d4d4d;
+$scrollbar-back-color: #d8d8d8;
+$background-selected: #f0f0f0;
+
+.custom-dropdown-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-dropdown-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid $grey-base-gov;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+  max-height: 38px;
+  padding-right: 5px;
+  padding-left: 8px;
+
+  i {
+    color: $grey-base-gov;
+    font-size: 13px;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    background-color: $light-grey;
+  }
+
+  &.invalid {
+    border: 2px solid $input-error;
+  }
+
+  .custom-dropdown-input {
+    flex: 1;
+    padding: 8px;
+    font-size: 13px;
+
+    border: none;
+    outline: none;
+
+    &.disabled {
+      cursor: not-allowed;
+      background-color: $light-grey;
+    }
+  }
+
+  .custom-dropdown-button {
+    border-radius: 50%;
+    border: 0;
+    width: 27px;
+    height: 27px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($blue-base-gov, 0.16);
+      transition: background-color 0.1s ease;
+    }
+
+    &:active {
+      background-color: rgba($blue-base-gov, 0.45);
+    }
+
+    i {
+      color: $blue-base-gov !important;
+
+      font-size: 11px;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      pointer-events: none;
+
+      i {
+        color: gray !important;
+      }
+    }
+  }
+}
+
+.custom-dropdown-styling {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  max-height: $dropdown-height;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+
+  &.dropdown-down {
+    top: 100%;
+  }
+
+  &.dropdown-up {
+    bottom: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    background-color: $scrollbar-back-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $grey-base-gov;
+    border-radius: 0;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: $highlight-scrollbar-color;
+  }
+
+  .custom-dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid $light-grey;
+    cursor: pointer;
+    transition: background 0.1s;
+    min-height: 3rem;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    &:hover {
+      background: $medium-grey;
+    }
+
+    &.selected {
+      background: $blue-base-gov-hover;
+      color: white;
+
+      &:hover {
+        background-color: rgba($blue-base-gov-hover, 0.85);
+        transition: background-color 0.1s ease;
+      }
+    }
+  }
+}
