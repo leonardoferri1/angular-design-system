@@ -34,7 +34,6 @@ import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 export class DropdownComponent implements ControlValueAccessor {
   @Input() _options: any[] = [];
   @Input() placeholder: string = '';
-  @Input() multiSelect: boolean = false;
 
   @Input() selectedValue: any = null;
   @Input() labelField: string = '';
@@ -66,8 +65,8 @@ export class DropdownComponent implements ControlValueAccessor {
   }
   private internalFormValue: any = null;
   private keyupSubject = new Subject<string>();
-  private onTouched!: () => void;
-  private onChange!: (value: any) => void;
+  private onTouched: () => void = () => {};
+  private onChange: (value: any) => void = () => {};
 
   constructor(
     private elementRef: ElementRef,
@@ -146,7 +145,7 @@ export class DropdownComponent implements ControlValueAccessor {
       this.isOpen = true;
       this.searchQuery = '';
       this.filterOptions();
-      this.onChange(null);
+      if (this.onChange) this.onChange(null);
       this.dropdownService.setActiveDropdown(this);
     }
   }
@@ -154,8 +153,8 @@ export class DropdownComponent implements ControlValueAccessor {
   filterOptions() {
     this.filteredOptions = this.options.filter((option) =>
       option[this.labelField]
-        .toLowerCase()
-        .includes(this.searchQuery.toLowerCase())
+        ?.toLowerCase()
+        .includes(this.searchQuery?.toLowerCase() ?? '')
     );
   }
 
@@ -179,15 +178,15 @@ export class DropdownComponent implements ControlValueAccessor {
   }
 
   registerOnChange(fn: (value: any) => void): void {
-    this.onChange = fn;
+    this.onChange = fn ?? (() => {});
   }
 
   registerOnTouched(fn: () => void): void {
-    this.onTouched = fn;
+    this.onTouched = fn ?? (() => {});
   }
 
   onQueryChange(event: any): void {
-    const value = event?.target?.value?.trim();
+    const value = event?.target?.value;
     if (value !== undefined) {
       this.searchQuery = value;
       this.filterOptions();

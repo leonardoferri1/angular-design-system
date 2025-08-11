@@ -1,0 +1,60 @@
+@import "../../../styles/variables";
+
+.table-pagination-container {
+  display: flex;
+  height: 65px;
+  width: 100% !important;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+
+  background-color: white !important;
+
+  .table-pagination-inner-container {
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+    height: 100%;
+
+    .divider {
+      height: 50%;
+      border-right: 1px solid $light-grey;
+    }
+
+    .page-buttons-container {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+
+      i {
+        color: $blue-base-gov;
+        font-size: 14px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .page-items-select-container {
+      div {
+        max-width: 8rem;
+      }
+
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .page-select-container {
+      div {
+        max-width: 6.5rem;
+      }
+
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}

@@ -11,6 +11,7 @@ import { tamanhoDePagina } from '../../../interfaces/ITamanhoDePagina.type';
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
   standalone: true,
+  styleUrl: './pagination.component.scss',
   imports: [DropdownComponent, FormsModule, AsyncPipe],
 })
 export class PaginationComponent {

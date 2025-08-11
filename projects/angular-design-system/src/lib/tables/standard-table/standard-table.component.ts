@@ -15,6 +15,7 @@ import { Ordenacao } from '../../interfaces/IOrdenacao.type';
 @Component({
   selector: 'app-standard-table',
   imports: [NgClass, NgTemplateOutlet, NgIf, NgStyle],
+  styleUrl: './standard-table.component.scss',
   standalone: true,
   templateUrl: 'standard-table.component.html',
 })

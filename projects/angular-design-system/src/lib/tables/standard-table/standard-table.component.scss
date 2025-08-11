@@ -1,0 +1,119 @@
+@import "../../styles/variables";
+
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 600px;
+  background: white;
+  overflow: hidden;
+
+  thead {
+    background-color: #f0f0f0;
+    color: $blue-base-gov;
+    text-align: left;
+    position: sticky;
+    top: 0;
+  }
+
+  th {
+    font-weight: 500;
+
+    p {
+      position: relative;
+
+      i {
+        position: absolute;
+        top: 50%;
+        padding: 0 0.25rem;
+        transform: translateY(-50%);
+        color: $blue-base-gov;
+        font-size: 15px;
+        pointer-events: none;
+      }
+    }
+  }
+
+  td {
+    font-weight: 500;
+    border-bottom: 1px solid #dddddd93;
+  }
+
+  th,
+  td {
+    height: 65px;
+    padding: 12px 15px;
+    text-align: start;
+  }
+
+  th:last-child {
+    text-align: center;
+  }
+
+  td:last-child {
+    text-align: center;
+  }
+
+  tbody tr.selected {
+    background-color: $blue-base-gov !important;
+    color: white;
+
+    &:hover {
+      background-color: $blue-base-gov-hover !important;
+    }
+  }
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  .action-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  tbody tr {
+    transition: background 0.05s ease;
+  }
+
+  .empty-table-container {
+    width: 1500px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  tbody tr:nth-of-type(even) {
+    background-color: white;
+  }
+
+  tbody tr:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.selection-info-container {
+  display: flex;
+  height: 65px;
+  width: 100% !important;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  background-color: $blue-dark-gov !important;
+
+  i {
+    font-size: 21px;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
