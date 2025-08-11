@@ -1,0 +1,62 @@
+<div class="table-pagination-container">
+  <div class="table-pagination-inner-container">
+    <p>Exibir</p>
+    <div class="page-items-select-container">
+      <dropdown
+        [labelField]="'name'"
+        [valueField]="'id'"
+        [options]="optionsItensPorPagina"
+        [(ngModel)]="itensPorPagina"
+        [dropdownDirection]="'up'"
+        (ngModelChange)="alterarItensPorPagina($event)"
+      ></dropdown>
+    </div>
+    <div class="divider"></div>
+    <p>{{ displayRange$ | async }}</p>
+  </div>
+  <div class="table-pagination-inner-container">
+    <p>Página</p>
+    <div class="page-select-container">
+      <dropdown
+        [labelField]="'name'"
+        [selectedValue]="1"
+        [valueField]="'id'"
+        [options]="(obterOptionsDePaginas$ | async) || []"
+        [(ngModel)]="paginaAtual"
+        [dropdownDirection]="'up'"
+        (ngModelChange)="alterarPagina($event?.id ?? 0)"
+      ></dropdown>
+    </div>
+    <div class="divider"></div>
+    <div class="page-buttons-container">
+      <button
+        class="default-tertiary-icon-button"
+        (click)="primeiraPagina()"
+        [disabled]="paginaAtual == 1"
+      >
+        <i class="fa-solid fa-angles-left"></i>
+      </button>
+      <button
+        class="default-tertiary-icon-button"
+        (click)="antPagina()"
+        [disabled]="paginaAtual == 1"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button
+        class="default-tertiary-icon-button"
+        (click)="proxPagina()"
+        [disabled]="paginaAtual == totalPaginas"
+      >
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <button
+        class="default-tertiary-icon-button"
+        (click)="ultimaPagina()"
+        [disabled]="paginaAtual == totalPaginas"
+      >
+        <i class="fa-solid fa-angles-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

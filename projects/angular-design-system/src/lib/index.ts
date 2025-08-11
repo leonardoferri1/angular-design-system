@@ -3,3 +3,6 @@ export * from './text-input';
 export * from './currency-input';
 export * from './number-input';
 export * from './text-area';
+export * from './tables';
+export * from './sidenav';
+export * from './interfaces';

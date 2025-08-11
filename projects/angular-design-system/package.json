@@ -1,9 +1,17 @@
 {
-  "name": "angular-design-system",
-  "version": "0.0.1",
+  "name": "@leonardoferri/angular-design-system",
+  "version": "0.0.21",
+  "description": "Design System Angular by Leonardo Ferri",
+  "author": "Leonardo Ferri",
+  "keywords": [
+    "angular",
+    "component",
+    "design-system"
+  ],
+  "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^18.2.0",
-    "@angular/core": "^18.2.0"
+    "@angular/common": "^18.0.0",
+    "@angular/core": "^18.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

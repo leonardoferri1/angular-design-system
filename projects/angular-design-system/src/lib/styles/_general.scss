@@ -1,0 +1,51 @@
+@import "./variables";
+
+.invalid-input {
+  border: 2px solid $input-error;
+}
+
+input {
+  font-size: 13px;
+  border: 1px solid $grey-base-gov;
+  border-radius: 4px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  width: 100% !important;
+  height: 38px;
+
+  &:focus {
+    border: 2px solid $gold-vivid;
+  }
+}
+
+textarea {
+  font-size: 13px;
+  border: 1px solid $grey-base-gov;
+  border-radius: 4px;
+  padding-top: 0.5rem;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  width: 100% !important;
+
+  &:focus {
+    border: 2px solid $gold-vivid;
+  }
+}
+
+input,
+textarea {
+  font-family: "Rawline", "Raleway", sans-serif;
+  font-weight: 500;
+
+  &:read-only,
+  &:disabled {
+    user-select: none;
+    pointer-events: none;
+    color: #777;
+    border: 1px solid #ccc;
+    cursor: not-allowed;
+  }
+}

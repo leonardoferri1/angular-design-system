@@ -1,0 +1,35 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  min-width: 400px;
+  max-width: 500px;
+  height: 100vh;
+  background: white;
+  padding: 16px;
+  z-index: 10;
+  transition: right 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidenav.open {
+  right: 0;
+}
+
+.sidenav-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}

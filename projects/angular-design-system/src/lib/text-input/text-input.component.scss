@@ -1,0 +1,17 @@
+@import "../styles/variables";
+@import "../styles/general";
+
+.input-wrapper {
+  position: relative;
+
+  input {
+    padding-right: 2.5rem;
+  }
+
+  .eye-button {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,59 @@
+<div *ngIf="selectedCount != 0" class="selection-info-container">
+  <p>
+    {{ selectedCount }} {{ selectedCount === 1 ? 'item' : 'itens' }} selecionado{{ selectedCount > 1 ? 's' : '' }}
+  </p>
+</div>
+
+<table class="table-custom">
+  <thead>
+  <tr>
+    @if (showSelectionColumn) {
+      <th style="width: 3%">
+        <input type="checkbox" [checked]="isAllSelected()" (change)="toggleSelectAll()"/>
+      </th>
+    }
+    @for (col of columns; track col.field) {
+      <th [ngClass]="'text-' + col.textAlignLabel"
+          [style]="'width: ' + col.width"
+          [ngStyle]="isSortable(col.setSortable, col.campoCustomizado) ? {'cursor': 'pointer'} : {}"
+          (click)="isSortable(col.setSortable, col.campoCustomizado)  ? sortColumn(col.field): null"
+      >
+        <p>{{ col.label }}
+          <i *ngIf="isSortable(col.setSortable, col.campoCustomizado)"
+             class="fa-solid"
+             [ngClass]="{'fa-sort': isSortedBy.orderBy !== col.field,
+                        'fa-sort-up': isSortedBy.orderBy === col.field && isSortedBy.sortOrder === 'ASC',
+                        'fa-sort-down': isSortedBy.orderBy === col.field && isSortedBy.sortOrder === 'DESC'}"
+          ></i>
+        </p>
+      </th>
+    }
+  </tr>
+  </thead>
+  <tbody>
+    @for (item of items; track item[this.trackBy]) {
+      <tr>
+        @if (showSelectionColumn) {
+          <td>
+            <input
+              type="checkbox"
+              [checked]="isSelected(item.id)"
+              (change)="toggleSelection(item.id)"
+            />
+          </td>
+        }
+        @for (col of columns; track col.field) {
+          <td [ngClass]="'text-' + col.textAlignContent">
+            {{ item[col.field] }}
+            @if (col.campoCustomizado) {
+              <ng-container
+                [ngTemplateOutlet]="customTemplate"
+                [ngTemplateOutletContext]="{$implicit: item.id}">
+              </ng-container>
+            }
+          </td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>

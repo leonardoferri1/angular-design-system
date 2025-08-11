@@ -1,0 +1,10 @@
+<div class="overlay" *ngIf="opened" (click)="close()"></div>
+
+<div class="sidenav" [ngClass]="{ open: opened }">
+  <button class="default-tertiary-icon-button" (click)="close()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <div class="sidenav-content">
+    <ng-content></ng-content>
+  </div>
+</div>

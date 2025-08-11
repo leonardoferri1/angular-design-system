@@ -6,7 +6,13 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:lib": "ng build angular-design-system",
+    "publish:lib": "cd dist/angular-design-system && npm publish --access public",
+    "build:lib:publish": "npm run build:lib && npm run publish:lib",
+    "release:patch": "cd projects/angular-design-system && npm version patch && cd ../../ && npm run build:lib:publish",
+    "release:minor": "cd projects/angular-design-system && npm version minor && cd ../../ && npm run build:lib:publish",
+    "release:major": "cd projects/angular-design-system && npm version major && cd ../../ && npm run build:lib:publish"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +24,8 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "ng2-currency-mask": "^13.0.3",
+    "ngx-mask": "^19.0.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
