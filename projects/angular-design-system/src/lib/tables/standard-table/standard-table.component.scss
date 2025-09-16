@@ -10,7 +10,7 @@
 
   thead {
     background-color: #f0f0f0;
-    color: $blue-base-gov;
+    color: $blue-base;
     text-align: left;
     position: sticky;
     top: 0;
@@ -27,7 +27,7 @@
         top: 50%;
         padding: 0 0.25rem;
         transform: translateY(-50%);
-        color: $blue-base-gov;
+        color: $blue-base;
         font-size: 15px;
         pointer-events: none;
       }
@@ -55,11 +55,11 @@
   }
 
   tbody tr.selected {
-    background-color: $blue-base-gov !important;
+    background-color: $blue-base !important;
     color: white;
 
     &:hover {
-      background-color: $blue-base-gov-hover !important;
+      background-color: $blue-base-hover !important;
     }
   }
 
@@ -106,7 +106,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
 
-  background-color: $blue-dark-gov !important;
+  background-color: $blue-dark !important;
 
   i {
     font-size: 21px;

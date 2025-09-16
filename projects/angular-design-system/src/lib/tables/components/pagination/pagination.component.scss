@@ -19,7 +19,7 @@
 
     .divider {
       height: 50%;
-      border-right: 1px solid $light-grey;
+      border-right: 1px solid $grey-light;
     }
 
     .page-buttons-container {
@@ -28,7 +28,7 @@
       gap: 0.2rem;
 
       i {
-        color: $blue-base-gov;
+        color: $blue-base;
         font-size: 14px;
       }
     }

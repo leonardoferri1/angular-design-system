@@ -1,3 +1,5 @@
+@import "../styles/variables";
+
 .overlay {
   position: fixed;
   top: 0;
@@ -15,7 +17,8 @@
   min-width: 400px;
   max-width: 500px;
   height: 100vh;
-  background: white;
+  background: $background-main-lighter;
+  color: $grey-light;
   padding: 16px;
   z-index: 10;
   transition: right 0.1s ease-in-out;
@@ -23,6 +26,37 @@
   flex-direction: column;
   gap: 2rem;
   box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.default-tertiary-icon-button {
+  border-radius: 50%;
+  border: 0;
+  width: 37px;
+  height: 37px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  background: none;
+  color: $grey-light;
+  cursor: pointer;
+
+  i {
+    font-size: 15px;
+  }
+
+  &:hover {
+    background-color: rgba($grey-light, 0.16);
+    transition: background-color 0.1s ease;
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 65%;
+    cursor: not-allowed;
+    box-shadow: none;
+    pointer-events: none;
+  }
 }
 
 .sidenav.open {

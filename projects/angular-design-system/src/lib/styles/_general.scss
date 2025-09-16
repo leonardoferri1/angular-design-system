@@ -6,7 +6,7 @@
 
 input {
   font-size: 13px;
-  border: 1px solid $grey-base-gov;
+  border: 1px solid $grey-base;
   border-radius: 4px;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -15,13 +15,13 @@ input {
   height: 38px;
 
   &:focus {
-    border: 2px solid $gold-vivid;
+    border: 2px solid $grey-base;
   }
 }
 
 textarea {
   font-size: 13px;
-  border: 1px solid $grey-base-gov;
+  border: 1px solid $grey-base;
   border-radius: 4px;
   padding-top: 0.5rem;
 
@@ -31,7 +31,7 @@ textarea {
   width: 100% !important;
 
   &:focus {
-    border: 2px solid $gold-vivid;
+    border: 2px solid $grey-base;
   }
 }
 
@@ -39,6 +39,7 @@ input,
 textarea {
   font-family: "Rawline", "Raleway", sans-serif;
   font-weight: 500;
+  background: rgb(44, 43, 41);
 
   &:read-only,
   &:disabled {

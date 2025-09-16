@@ -5,4 +5,5 @@ export * from './number-input';
 export * from './text-area';
 export * from './tables';
 export * from './sidenav';
+export * from './date-picker';
 export * from './interfaces';
